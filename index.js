@@ -15,11 +15,13 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
 
+app.use(express.urlencoded({extended: true}))
 app.use(todosRoutes)
+
 
 async function start() {
     try {
-        await mongoose.connect('mongodb+srv://rnet:yoyo8615@cluster0.c5mlq.mongodb.net/todos', {
+        await mongoose.connect('mongodb+srv://rnet:BARK9flix@cluster0.c5mlq.mongodb.net/todos', {
             useNewUrlParser: true,
             useFindAndModify: false
         })
